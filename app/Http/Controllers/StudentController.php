@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -74,8 +75,8 @@ class StudentController extends Controller
 //        $students = DB::table('student')
 //            ->orderBy('id','desc')
 //            ->first();
-        $result = DB::table('student')
-            ->max('age');
+//        $result = DB::table('student')
+//            ->max('age');
 //        $students = DB::table('student')
 //            ->where('id','>=','1001')
 //            ->get();
@@ -95,6 +96,11 @@ class StudentController extends Controller
 //            ->chunk(2,function($result){
 //            var_dump($result);
 //        });
+        $result = Student::all();
         dd($result);
+    }
+
+    public function section1(){
+        return view('student.section1   ');
     }
 }

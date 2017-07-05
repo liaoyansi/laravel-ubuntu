@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('test/info','TestController@info');
+Route::get('test/info','TestController@info');
 // Route::get('test/info',[
 //   'uses' => 'TestController@info',
 //   'as' => 'testinfo'
@@ -36,3 +36,5 @@ Route::any('query/insert',['uses' => 'StudentController@queryInsert']);
 Route::any('query/update',['uses' => 'StudentController@queryUpdate']);
 Route::any('query/delete',['uses' => 'StudentController@queryDelete']);
 Route::any('query',['uses' => 'StudentController@query']);
+
+Route::any('student/section1',['uses' => 'StudentController@section1']);
