@@ -101,6 +101,48 @@ class StudentController extends Controller
     }
 
     public function section1(){
-        return view('student.section1   ');
+        $students = [];
+//        $students = Student::all();
+        $name = 'liao';
+        $arr = ['liao','yan','si'];
+        return view('student.section1',
+            [
+                'name'=>$name,
+                'arr'=>$arr,
+                'students'=>$students
+            ]
+        );
+    }
+
+    public function section2(){
+        return 'section2';
+    }
+
+    public function request1(Request $request){
+
+//        //取值
+//        echo $request->input('test');
+//        // 取值，如果没有返回默认参数
+//        echo $request->input('name','未知参数');
+//        // 判断是否有指定参数
+//        if($request->has('test')){
+//            echo $request->input('test');
+//        }else{
+//            echo '无该参数';
+//        }
+//        // 获取所有输入参数
+//        $result = $request->all();
+//        dd($result);
+        // 返回请求类型
+//        echo $request->method();
+//        // 判断请求类型是否是指定类型
+//        if($request->isMethod('GET')){
+//            echo 'Yes';
+//        }else{
+//            echo 'No';
+//        }
+//        $result = $request->ajax();
+//        var_dump($request);
+
     }
 }

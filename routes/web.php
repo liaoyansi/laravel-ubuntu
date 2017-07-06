@@ -38,3 +38,5 @@ Route::any('query/delete',['uses' => 'StudentController@queryDelete']);
 Route::any('query',['uses' => 'StudentController@query']);
 
 Route::any('student/section1',['uses' => 'StudentController@section1']);
+Route::any('student/section2',['as'=>'section','uses' => 'StudentController@section2']);
+Route::any('student/request1',['uses' => 'StudentController@request1']);

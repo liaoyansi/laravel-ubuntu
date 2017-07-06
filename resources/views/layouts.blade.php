@@ -13,7 +13,7 @@
         }
         .main {
             width: 1000px;
-            height: 300px;
+            height: 500px;
             margin: 0 auto;
             margin-top: 15px;
             clear: both;
@@ -56,7 +56,7 @@
         @show
     </div>
     <div class="content">
-        @yield('content','主要内容区域');
+        @yield('content','主要内容区域')
     </div>
 </div>
 <div class="footer">
