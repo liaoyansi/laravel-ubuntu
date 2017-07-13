@@ -64,3 +64,7 @@ Route::any('student/delete/{id}',['uses' => 'StudentController@delete']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
