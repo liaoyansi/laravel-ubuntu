@@ -68,3 +68,10 @@ Route::any('student/delete/{id}',['uses' => 'StudentController@delete']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::any('upload', 'StudentController@upload');
+Route::any('mail', 'StudentController@mail');
+Route::any('setCache', 'StudentController@setCache');
+Route::any('getCache', 'StudentController@getCache');
+Route::any('log', 'StudentController@log');
+Route::any('queue', 'StudentController@queue');
