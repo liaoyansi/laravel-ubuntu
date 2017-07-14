@@ -11,13 +11,34 @@
 |
 */
 
-Route::get('/', 'SitesController@index');
+//Route::get('/', 'SitesController@index');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
+    Route::get('/', 'HomeController@index');
+    Route::resource('article', 'ArticleController');
+});
+
+Route::resource('photo', 'PhotoController');
+
+Route::get('article/{id}', 'ArticleController@show');
+Route::post('comment', 'CommentController@store');
+
+
+Route::any('superman','StudentController@superMan');
+
+
+
+
+
+
 
 Route::get('/about', 'SitesController@about');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 
 Route::get('test/info','TestController@info');
 // Route::get('test/info',[
@@ -65,9 +86,7 @@ Route::any('student/delete/{id}',['uses' => 'StudentController@delete']);
 
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::any('upload', 'StudentController@upload');
 Route::any('mail', 'StudentController@mail');
@@ -75,3 +94,9 @@ Route::any('setCache', 'StudentController@setCache');
 Route::any('getCache', 'StudentController@getCache');
 Route::any('log', 'StudentController@log');
 Route::any('queue', 'StudentController@queue');
+Route::get('now',function(){
+    throw new \Exception("我故意的", 1);
+    return date('Y-m-d H:i:s');
+});
+
+

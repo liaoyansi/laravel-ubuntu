@@ -29,7 +29,9 @@
             @foreach($student->sex() as $ind=>$val)
                 <label class="radio-inline">
                     <input type="radio" name="Student[sex]"
-                           {{ isset($student->sex) && $student->sex == $ind ? 'checked':'' }}
+                           {{--@if( isset($student->sex) )--}}
+                             {{--{{ $student->sex == $ind ? 'checked' : ''  }}--}}
+                           {{--@endif--}}
                            value="{{ $ind }}">{{ $val }}
                 </label>
             @endforeach

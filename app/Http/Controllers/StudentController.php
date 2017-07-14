@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Core\Power\Flight;
+use App\Core\Power\Force;
+use App\Core\Power\Shot;
+use App\Core\Superman;
+use App\Core\SuperModuleContainer;
 use App\Jobs\SendEmail;
 use App\Student;
 
+use Illuminate\Container\Container;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Log;
@@ -14,6 +20,11 @@ use Illuminate\Support\Facades\Validator;
 
 
 class StudentController extends Controller {
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
+
     public function index(){
         $data['students'] = Student::orderBy('id','desc')->paginate(5);
 
@@ -58,8 +69,6 @@ class StudentController extends Controller {
                     ->withErrors($validator)
                     ->withInput();
             }
-
-
 
             $data = $request->input('Student');
             if(Student::create($data)) {
@@ -243,6 +252,49 @@ class StudentController extends Controller {
 
     public function queue(){
         dispatch(new SendEmail('liaoyansem@163.com'));
+
+    }
+
+    public function superMan(){
+
+        $container = new SuperModuleContainer();
+        $container->bind('superman', function($container, $moduleName) {
+            return new Superman($container->make($moduleName));
+        });
+        // 向该 超级工厂添加超能力模组的生产脚本
+        $container->bind('flight', function($container) {
+            return new Flight();
+        });
+
+        // 同上
+        $container->bind('force', function($container) {
+            return new Force();
+        });
+
+        $container->bind('shot', function($container) {
+            return new Shot();
+        });
+
+        $superman_1 = $container->make('superman', 'flight');
+        dd($superman_1);
+        exit;
+        $data = [
+            'speed' => 9,
+            'holdtime'=>100
+            ];
+        $superman_1->run($data);
+       // $superman_2 = $container->make('superman', 'force');
+       // $superman_3 = $container->make('superman', 'shot');
+
+//        $superModule = new Flight();
+//        $superMan = new Superman($superModule);
+//        $data = [
+//            'speed' => 9,
+//            'holdtime'=>100
+//            ];
+//        echo $superMan->run($data);
+        //dd($superMan);
+
 
     }
 }

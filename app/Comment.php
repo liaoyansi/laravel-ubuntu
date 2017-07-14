@@ -4,14 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Comment extends Model
 {
-    //
     // 设置表名
-    protected $table = 'articles';
+    protected $table = 'comments';
 
-    // 设置批量复制
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['nickname', 'email', 'website', 'content', 'article_id'];
 
     // 设置自动维护时间
     public $timestamps = true;
@@ -24,10 +22,5 @@ class Article extends Model
     protected function asDateTime($val)
     {
         return $val;
-    }
-
-    public function hasManyComments()
-    {
-        return $this->hasMany('App\Comment', 'article_id', 'id');
     }
 }
