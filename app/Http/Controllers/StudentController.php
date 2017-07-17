@@ -7,6 +7,7 @@ use App\Core\Power\Force;
 use App\Core\Power\Shot;
 use App\Core\Superman;
 use App\Core\SuperModuleContainer;
+use App\Core\SuperModuleInterface;
 use App\Jobs\SendEmail;
 use App\Student;
 
@@ -24,6 +25,19 @@ class StudentController extends Controller {
 //    {
 //        $this->middleware('auth');
 //    }
+
+    /**
+     * @var SuperModuleInterface $superman
+     */
+    protected $superman;
+
+    /**
+     * StudentController constructor.
+     * @param SuperModuleInterface $superman
+     */
+    public function __construct(SuperModuleInterface $superman){
+        $this->superman = $superman;
+    }
 
     public function index(){
         $data['students'] = Student::orderBy('id','desc')->paginate(5);
@@ -256,6 +270,11 @@ class StudentController extends Controller {
     }
 
     public function superMan(){
+
+      //  echo $this->superman->getModule();
+        echo $this->superman->run();
+        echo $this->superman->getApp();
+        exit;
 
         $container = new SuperModuleContainer();
         $container->bind('superman', function($container, $moduleName) {

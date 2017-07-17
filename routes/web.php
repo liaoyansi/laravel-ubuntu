@@ -99,4 +99,30 @@ Route::get('now',function(){
     return date('Y-m-d H:i:s');
 });
 
+$dingo_api = app('Dingo\Api\Routing\Router');
+$dingo_api->version('v1',function ($api){
+    $api->group([
+        'namespace' => 'App\Api\V1\Controllers'
+    ],function($api){
+        $api->get('test','TestController@index');
+        $api->post('/login','AuthController@login');
+        $api->post('/register','AuthController@register');
+    });
 
+    $api->group([
+        'namespace' => 'App\Api\V1\Controllers',
+        'middleware' => 'jwt.auth'
+    ],function($api){
+        $api->get('/me','AuthController@me');
+    });
+
+
+});
+
+$dingo_api->version('v2',function ($api){
+    $api->group([
+        'namespace' => 'App\Api\V2\Controllers'
+    ],function($api){
+        $api->get('test','TestController@index');
+    });
+});
