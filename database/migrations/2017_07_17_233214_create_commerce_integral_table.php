@@ -17,10 +17,14 @@ class CreateCommerceIntegralTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_integral', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_integral')){
+
+        }else {
+            Schema::create('commerce_integral', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-/**
- * 评论
- * Class CreateCommerceCommentTable
- */
-class CreateCommerceCommentTable extends Migration
+class CreateCommerceOrderListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,17 +13,17 @@ class CreateCommerceCommentTable extends Migration
      */
     public function up()
     {
-        if(Schema::hasTable('commerce_comment')){
+        if(Schema::hasTable('commerce_order_list')){
 
         }else {
-            Schema::create('commerce_comment', function (Blueprint $table) {
+            Schema::create('commerce_order_list', function (Blueprint $table) {
                 $table->increments('id');
-                // 用户
+                // 订单编号
+                $table->integer('order')->unsigned()
+                    ->comment('订单编号');
                 // 商品ID
-                // 标题
-                // 内容
-                // 图片
-                // 评分
+                $table->integer('product_temp')->unsigned()
+                    ->comment('商品ID');
                 $table->timestamps();
             });
         }
@@ -40,6 +36,6 @@ class CreateCommerceCommentTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commerce_comment');
+        Schema::dropIfExists('commerce_order_lists');
     }
 }

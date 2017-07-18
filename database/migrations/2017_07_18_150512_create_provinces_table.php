@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-/**
- * 文章
- * Class CreateCommerceArticleTable
- */
-class CreateCommerceArticleTable extends Migration
+class CreateProvincesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,11 +13,13 @@ class CreateCommerceArticleTable extends Migration
      */
     public function up()
     {
-        if(Schema::hasTable('commerce_article')){
+        if(Schema::hasTable('province')){
 
         }else {
-            Schema::create('commerce_article', function (Blueprint $table) {
+            Schema::create('province', function (Blueprint $table) {
                 $table->increments('id');
+                // 省份代码
+                $table->integer('code');
                 $table->timestamps();
             });
         }
@@ -34,6 +32,6 @@ class CreateCommerceArticleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commerce_article');
+        Schema::dropIfExists('provinces');
     }
 }

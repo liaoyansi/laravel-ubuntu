@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-/**
- * 文章
- * Class CreateCommerceArticleTable
- */
-class CreateCommerceArticleTable extends Migration
+class CreateUploadsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,11 +13,16 @@ class CreateCommerceArticleTable extends Migration
      */
     public function up()
     {
-        if(Schema::hasTable('commerce_article')){
+        if (Schema::hasTable('upload')) {
 
-        }else {
-            Schema::create('commerce_article', function (Blueprint $table) {
+        } else {
+            Schema::create('upload', function (Blueprint $table) {
                 $table->increments('id');
+                // 文件名
+                // 类型
+                // 位置
+                // 大小
+                // 规格
                 $table->timestamps();
             });
         }
@@ -34,6 +35,6 @@ class CreateCommerceArticleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('commerce_article');
+        Schema::dropIfExists('uploads');
     }
 }

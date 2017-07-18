@@ -17,10 +17,26 @@ class CreateCommerceMessageTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_message', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_message')){
+
+        }else {
+            Schema::create('commerce_message', function (Blueprint $table) {
+                $table->increments('id');
+                // 用户
+                $table->integer('user')->unsigned()
+                    ->comment('用户ID');
+                // 是否阅读
+                $table->integer('read')
+                    ->comment('是否阅读，0未阅读，1阅读');
+                // 标题
+                $table->string('title')
+                    ->comment('标题');
+                // 内容
+                $table->string('content')
+                    ->comment('内容');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

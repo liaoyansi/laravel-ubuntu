@@ -17,10 +17,14 @@ class CreateSystemConfigTable extends Migration
      */
     public function up()
     {
-        Schema::create('system_config', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('system_config')){
+
+        }else {
+            Schema::create('system_config', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

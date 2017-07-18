@@ -17,10 +17,14 @@ class CreateCommerceCouponTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_coupon', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_coupon')){
+
+        }else {
+            Schema::create('commerce_coupon', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

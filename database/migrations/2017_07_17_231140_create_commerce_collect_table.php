@@ -17,10 +17,20 @@ class CreateCommerceCollectTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_collect', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_collect')){
+
+        }else {
+            Schema::create('commerce_collect', function (Blueprint $table) {
+                $table->increments('id');
+                // 用户
+                $table->integer('user')->unsigned()
+                    ->comment('用户ID');
+                // 商品ID
+                $table->integer('product')->unsigned()
+                    ->comment('商品ID');
+                $table->timestamps();
+            });
+        }
     }
 
     /**
