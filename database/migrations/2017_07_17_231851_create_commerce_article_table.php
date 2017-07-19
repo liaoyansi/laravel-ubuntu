@@ -17,10 +17,14 @@ class CreateCommerceArticleTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_article', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_article')){
+
+        }else {
+            Schema::create('commerce_article', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

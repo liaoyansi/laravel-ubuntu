@@ -17,10 +17,14 @@ class CreateCommerceClassifyTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_classify', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_classify')){
+
+        }else {
+            Schema::create('commerce_classify', function (Blueprint $table) {
+                $table->increments('id');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

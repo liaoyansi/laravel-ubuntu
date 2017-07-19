@@ -17,10 +17,20 @@ class CreateCommerceCommentTable extends Migration
      */
     public function up()
     {
-        Schema::create('commerce_comment', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-        });
+        if(Schema::hasTable('commerce_comment')){
+
+        }else {
+            Schema::create('commerce_comment', function (Blueprint $table) {
+                $table->increments('id');
+                // 用户
+                // 商品ID
+                // 标题
+                // 内容
+                // 图片
+                // 评分
+                $table->timestamps();
+            });
+        }
     }
 
     /**

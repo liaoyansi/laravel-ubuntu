@@ -17,8 +17,15 @@ class CreateCommerceCartsTable extends Migration
      */
     public function up()
     {
+
         Schema::create('commerce_carts', function (Blueprint $table) {
             $table->increments('id');
+            // 用户
+            $table->integer('user')->unsigned()
+                ->comment('用户ID');
+            // 商品ID
+            $table->integer('product_temp')->unsigned()
+                ->comment('商品ID');
             $table->timestamps();
         });
     }
