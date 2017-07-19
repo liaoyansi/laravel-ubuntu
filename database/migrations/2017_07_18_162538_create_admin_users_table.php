@@ -40,11 +40,11 @@ class CreateAdminUsersTable extends Migration
                 // 登录时间
                 $table->integer('login_time')->default(0);
                 // 登录IP
-                $table->integer('login_ip')->default(0);
+                $table->ipAddress('login_ip')->nullable();
                 // 上一次登录时间
                 $table->integer('last_login_time')->default(0);
                 // 上一次登录IP
-                $table->integer('last_login_ip')->default(0);
+                $table->ipAddress('last_login_ip')->nullable();
                 // 判断用户是否有效
                 $table->integer('active')->default(0);
 

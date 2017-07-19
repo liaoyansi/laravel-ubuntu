@@ -17,7 +17,7 @@ use Illuminate\Foundation\Auth\ResetsPasswords;
 class AuthController  extends Controller
 {
     //
-    use AuthenticatesUsers,RegistersUsers;
+   // use AuthenticatesUsers,RegistersUsers;
 
 //    protected $redirectTo = '/admin';
 //    protected $guard = 'admin';
@@ -43,18 +43,25 @@ class AuthController  extends Controller
     //登录
     public function login(Request $request)
     {
+        $user = '';
         if ($request->isMethod('post')) {
             $validator = $this->validateLogin($request->input());
             if ($validator->fails()) {
                 return Redirect()->back()->withErrors($validator)->withInput();
             }
             if (Auth::guard('admin')->attempt(['username'=>$request->username, 'password'=>$request->password])) {
+                $user = Auth::guard('admin')->user();
+                // 更新登录信息
+                $user->login($request);
                 return Redirect('admin')->with('success', '登录成功！');     //login success, redirect to admin
             } else {
                 return Redirect()->back()->with('error', '账号或密码错误')->withInput();
             }
         }
-        return view('admin.login');
+
+        return view('admin.login',[
+            'test1111'=>1
+        ]);
     }
 
     //登录页面验证
@@ -75,7 +82,10 @@ class AuthController  extends Controller
     //退出登录
     public function logout()
     {
-        if(Auth::guard('admin')->user()){
+//        $user = Auth::guard('admin')->user();
+//        dd($user);
+        if(Auth::guard('admin')){
+
             Auth::guard('admin')->logout();
         }
         return Redirect('admin/login');
@@ -93,8 +103,10 @@ class AuthController  extends Controller
             $user->nickname = $request->nickname;
             $user->username = $request->username;
             $user->password = bcrypt($request->password);
-            $user->create_time = time();
-            $user->update_time = time();
+            $user->created_at = time();
+            $user->updated_at = time();
+            $user->login_time = time();
+            $user->login_ip = $request->ip();
             if($user->save()){
                 return redirect('admin/login')->with('success', '注册成功！');
             }else{
