@@ -1,25 +1,74 @@
-<div class="row-fluid clearfix">
-    <div class="col-md-6 column" style="padding:0;">
-        <ul class="nav nav-pills nav-stacked">
-            <li ></li>
-            <li><a href="#">SVN</a></li>
-            <li><a href="#">iOS</a></li>
-            <li><a href="#">VB.Net</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">PHP</a></li>
-        </ul>
+<div class="panel-group text-center" id="accordion" >
+    <div class="panel panel-default" style="margin-top:0;">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                用户管理
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body" style="padding:0;">
+                <ul class="nav nav-pills nav-stacked ">
+                    <li ><a href="#">SVN</a></li>
+                    <li class="active">
+                        <a href="#"  style=" font-size: 16px;">
+                            <span class="glyphicon glyphicon-user"></span> 用户信息
+                        </a>
+                    </li>
+                    <li><a href="#">VB.Net</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">PHP</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="col-md-6 column" style="padding:0;">
-        <ul class="nav nav-pills nav-stacked" >
-            <li ><a href="#">Home</a></li>
-            <li class="active"><a href="#">SVN</a></li>
-            <li><a href="#">iOS</a></li>
-            <li><a href="#">VB.Net</a></li>
-            <li><a href="#">Java</a></li>
-            <li><a href="#">PHP</a></li>
-        </ul>
+    <div class="panel panel-default" style="margin-top:0;">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                商户管理
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body" style="padding:0;">
+                <ul class="nav nav-pills nav-stacked ">
+                    <li ><a href="#">SVN</a></li>
+                    <li>
+                        <a href="#"  style=" font-size: 16px;">
+                            <span class="glyphicon glyphicon-user"></span> 用户信息
+                        </a>
+                    </li>
+                    <li><a href="#">VB.Net</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">PHP</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top:0;">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                系统管理
+            </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+            <div class="panel-body" style="padding:0;">
+                <ul class="nav nav-pills nav-stacked ">
+                    <li ><a href="#">SVN</a></li>
+                    <li>
+                        <a href="#"  style=" font-size: 16px;">
+                            <span class="glyphicon glyphicon-user"></span> 用户信息
+                        </a>
+                    </li>
+                    <li><a href="#">VB.Net</a></li>
+                    <li><a href="#">Java</a></li>
+                    <li><a href="#">PHP</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
 </div>
+
+
+
 
 {{--<div class="panel-group" id="accordion">--}}
     {{--<div class="panel panel-default">--}}
