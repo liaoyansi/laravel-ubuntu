@@ -1,133 +1,36 @@
-<div class="panel-group text-center" id="accordion" >
-    <div class="panel panel-default" style="margin-top:0;">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                用户管理
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body" style="padding:0;">
-                <ul class="nav nav-pills nav-stacked ">
-                    <li ><a href="#">SVN</a></li>
-                    <li class="active">
-                        <a href="#"  style=" font-size: 16px;">
-                            <span class="glyphicon glyphicon-user"></span> 用户信息
-                        </a>
-                    </li>
-                    <li><a href="#">VB.Net</a></li>
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">PHP</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="panel panel-default" style="margin-top:0;">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                商户管理
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body" style="padding:0;">
-                <ul class="nav nav-pills nav-stacked ">
-                    <li ><a href="#">SVN</a></li>
-                    <li>
-                        <a href="#"  style=" font-size: 16px;">
-                            <span class="glyphicon glyphicon-user"></span> 用户信息
-                        </a>
-                    </li>
-                    <li><a href="#">VB.Net</a></li>
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">PHP</a></li>
-                </ul>
-            </div>
+<link href="{{ asset('css/admin/left_menu.css') }}" rel="stylesheet">
+<style>
+    .list-group{
+        padding-left: 0;
+        margin-bottom: 0;
+    }
+    .btn-group-vertical>.btn:first-child:not(:last-child) {
+        border-radius: 0;
+    }
+    .list-group-item:first-child{
+        border-radius: 0;
+    }
+</style>
+<div class="btn-group-vertical " role="group" aria-label="..." style="width:100%;">
+    <button type="button" class="btn btn-default " data-toggle="collapse" data-target="#collapseThree1" aria-expanded="true" aria-controls="collapseThree1">1</button>
+    <div id="collapseThree1" class=" collapse"  >
+
+        <div class="list-group text-center">
+            <a href="#" class="list-group-item active">Cras justo odio</a>
+            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item">Morbi leo risus</a>
+            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
         </div>
     </div>
-    <div class="panel panel-default" style="margin-top:0;">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                系统管理
-            </h4>
-        </div>
-        <div id="collapseOne" class="panel-collapse collapse in">
-            <div class="panel-body" style="padding:0;">
-                <ul class="nav nav-pills nav-stacked ">
-                    <li ><a href="#">SVN</a></li>
-                    <li>
-                        <a href="#"  style=" font-size: 16px;">
-                            <span class="glyphicon glyphicon-user"></span> 用户信息
-                        </a>
-                    </li>
-                    <li><a href="#">VB.Net</a></li>
-                    <li><a href="#">Java</a></li>
-                    <li><a href="#">PHP</a></li>
-                </ul>
-            </div>
+    <button type="button" class="btn btn-default " data-toggle="collapse" data-target="#collapseThree2" aria-expanded="true" aria-controls="collapseThree2">2</button>
+    <div id="collapseThree2" class=" collapse">
+        <div class="list-group text-center">
+            <a href="#" class="list-group-item active">Cras justo odio</a>
+            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+            <a href="#" class="list-group-item">Morbi leo risus</a>
+            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+            <a href="#" class="list-group-item">Vestibulum at eros</a>
         </div>
     </div>
 </div>
-
-
-
-
-{{--<div class="panel-group" id="accordion">--}}
-    {{--<div class="panel panel-default">--}}
-        {{--<div class="panel-heading">--}}
-            {{--<h4 class="panel-title">--}}
-                {{--<a data-toggle="collapse" data-parent="#accordion"--}}
-                   {{--href="#collapseOne">--}}
-                    {{--商品--}}
-                {{--</a>--}}
-            {{--</h4>--}}
-        {{--</div>--}}
-        {{--<div id="collapseOne" class="panel-collapse collapse in">--}}
-            {{--<div class="panel-body">--}}
-                {{--<ul class="nav nav-pills nav-stacked">--}}
-                    {{--<li class="active"><a href="#">Home</a></li>--}}
-                    {{--<li><a href="#">SVN</a></li>--}}
-                    {{--<li><a href="#">iOS</a></li>--}}
-                    {{--<li><a href="#">VB.Net</a></li>--}}
-                    {{--<li><a href="#">Java</a></li>--}}
-                    {{--<li><a href="#">PHP</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="panel panel-default">--}}
-        {{--<div class="panel-heading">--}}
-            {{--<h4 class="panel-title">--}}
-                {{--<a data-toggle="collapse" data-parent="#accordion"--}}
-                   {{--href="#collapseTwo">--}}
-                    {{--订单--}}
-                {{--</a>--}}
-            {{--</h4>--}}
-        {{--</div>--}}
-        {{--<div id="collapseTwo" class="panel-collapse collapse">--}}
-            {{--<div class="panel-body">--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    {{--<div class="panel panel-default">--}}
-        {{--<div class="panel-heading">--}}
-            {{--<h4 class="panel-title">--}}
-                {{--<a data-toggle="collapse" data-parent="#accordion"--}}
-                   {{--href="#collapseThree">--}}
-                    {{--用户--}}
-                {{--</a>--}}
-            {{--</h4>--}}
-        {{--</div>--}}
-        {{--<div id="collapseThree" class="panel-collapse collapse">--}}
-            {{--<div class="panel-body">--}}
-                {{--<ul class="nav nav-pills nav-stacked">--}}
-                    {{--<li class="active"><a href="#">Home</a></li>--}}
-                    {{--<li><a href="#">SVN</a></li>--}}
-                    {{--<li><a href="#">iOS</a></li>--}}
-                    {{--<li><a href="#">VB.Net</a></li>--}}
-                    {{--<li><a href="#">Java</a></li>--}}
-                    {{--<li><a href="#">PHP</a></li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}

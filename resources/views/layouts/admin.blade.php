@@ -14,7 +14,7 @@
 
     {{--Bootstrap--}}
     <link href="{{ asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -22,10 +22,10 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body >
 <div id="app">
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-top" role="navigation">
+        <div class="container-fluid" >
             <div class="navbar-header" style="margin-left:20px;">
                 <!-- Collapsed Hamburger -->
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
@@ -44,22 +44,22 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav" >
 
-                    <li><a href="{{ url('/') }}">前台</a></li>
-                    <li><a href="{{ url('/admin') }}">后台</a></li>
+                    <li ><a href="{{ url('/') }}" class="navbar-a">前台</a></li>
+                    <li><a href="{{ url('/admin') }}" class="navbar-a">后台</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right" style="margin-right:20px;">
+                <ul class="nav navbar-nav navbar-right " style="margin-right:20px;">
                     <!-- Authentication Links -->
                     @if (!Auth::guard('admin')->check())
-                        <li><a href="{{ url('admin/login') }}">Login</a></li>
-                        <li><a href="{{ url('admin/register') }}">Register</a></li>
+                        <li><a href="{{ url('admin/login') }}" class="navbar-a">Login</a></li>
+                        <li><a href="{{ url('admin/register') }}" class="navbar-a">Register</a></li>
                     @else
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            <a href="#" class="dropdown-toggle navbar-a" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::guard('admin')->user()->username }} <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu" role="menu">
+                            <ul class="dropdown-menu navbar-a" role="menu">
                                 <li><a href="{{ url('admin/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -71,7 +71,7 @@
 
     <div class="container-fluid" style="margin-top:50px;">
         <div class="row">
-            <div class="col-md-2 sidebar" style="padding:20px 0 0 0;">
+            <div class="col-md-2" style="padding:20px 0 0 0;">
                 @include('admin.left_menu')
             </div>
             <div class="col-md-10 main" style="padding-top:20px;">
