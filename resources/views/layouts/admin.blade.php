@@ -14,7 +14,15 @@
 
     {{--Bootstrap--}}
     <link href="{{ asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/admin/main.css') }}" rel="stylesheet">
+    {{--<link href="{{ asset('css/admin/main.css') }}" rel="stylesheet">--}}
+    {{--<link href="{{ asset('css/admin/left_menu.css').'?v='.time() }}" rel="stylesheet">--}}
+    <style>
+        .left_menu{width:100%;}
+        .list-group{padding-left: 0;margin-bottom: 0;}
+        .btn-group-vertical>.btn:first-child:not(:last-child) {border-radius: 0;}
+        .list-group>.list-group-item:last-child{border-radius: 0;}
+        .list-group>.list-group-item:first-child {border-radius: 0;}
+    </style>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

@@ -1,17 +1,4 @@
-<link href="{{ asset('css/admin/left_menu.css') }}" rel="stylesheet">
-<style>
-    .list-group{
-        padding-left: 0;
-        margin-bottom: 0;
-    }
-    .btn-group-vertical>.btn:first-child:not(:last-child) {
-        border-radius: 0;
-    }
-    .list-group-item:first-child{
-        border-radius: 0;
-    }
-</style>
-<div class="btn-group-vertical " role="group" aria-label="..." style="width:100%;">
+<div class="btn-group-vertical left_menu" role="group" aria-label="..." >
     <button type="button" class="btn btn-default " data-toggle="collapse" data-target="#collapseThree1" aria-expanded="true" aria-controls="collapseThree1">1</button>
     <div id="collapseThree1" class=" collapse"  >
 
