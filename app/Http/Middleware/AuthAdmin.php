@@ -24,7 +24,6 @@ class AuthAdmin
                 return redirect('admin/login');
             }
         }
-
         $result = $next($request);
         return $result;
     }

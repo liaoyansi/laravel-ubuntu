@@ -47,7 +47,7 @@ class AuthController  extends Controller
         if ($request->isMethod('post')) {
             $validator = $this->validateLogin($request->input());
             if ($validator->fails()) {
-                return Redirect()->back()->withErrors($validator)->withInput();
+                return Redirect()->back()->withErrors($validator,'login')->withInput();
             }
             if (Auth::guard('admin')->attempt(['username'=>$request->username, 'password'=>$request->password])) {
                 $user = Auth::guard('admin')->user();
@@ -59,9 +59,7 @@ class AuthController  extends Controller
             }
         }
 
-        return view('admin.login',[
-            'test1111'=>1
-        ]);
+        return view('admin.login');
     }
 
     //登录页面验证
@@ -71,8 +69,8 @@ class AuthController  extends Controller
             'username' => 'required|alpha_num',
             'password' => 'required',
         ], [
-            'required' => ':attribute 为必填项',
-            'min' => ':attribute 长度不符合要求'
+            'required' => ':attribute不能为空',
+            'min' => ':attribute长度不符合要求'
         ], [
             'username' => '账号',
             'password' => '密码'
