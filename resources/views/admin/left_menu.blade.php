@@ -1,23 +1,53 @@
-<div class="btn-group-vertical left_menu" role="group" aria-label="..." >
-    <button type="button" class="btn btn-default " data-toggle="collapse" data-target="#collapseThree1" aria-expanded="true" aria-controls="collapseThree1">1</button>
-    <div id="collapseThree1" class=" collapse"  >
 
-        <div class="list-group text-center">
-            <a href="#" class="list-group-item active">Cras justo odio</a>
-            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
-        </div>
+<div class="ui fluid vertical menu" id="left_menu">
+    {{--<a class="active teal item">--}}
+    {{--收件箱--}}
+    {{--<div class="ui teal label">1</div>--}}
+    {{--</a>--}}
+    <a class="active  item">
+        <i class="home icon"></i>主页
+    </a>
+    <a class="item">
+        <i class="home icon"></i>{{ \App\module\admin\AdminUser::find(1)->username }}
+    </a>
+    <div class="header item">
+        <i class="user icon"></i>
+        社区
     </div>
-    <button type="button" class="btn btn-default " data-toggle="collapse" data-target="#collapseThree2" aria-expanded="true" aria-controls="collapseThree2">2</button>
-    <div id="collapseThree2" class=" collapse">
-        <div class="list-group text-center">
-            <a href="#" class="list-group-item active">Cras justo odio</a>
-            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-            <a href="#" class="list-group-item">Morbi leo risus</a>
-            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-            <a href="#" class="list-group-item">Vestibulum at eros</a>
-        </div>
+    <a class="teal  item">
+        主题
+    </a>
+    <a class="item">
+        朋友
+    </a>
+    <div class="header item">
+        <i class="globe icon"></i>
+        城市
     </div>
+    <a class="item">
+        历史
+    </a>
+    <a class="item">
+        消息
+    </a>
+    <a class="item">
+        讨论
+    </a>
+    <a class="item">
+        奖励
+    </a>
+    <a class="item">
+        商店
+    </a>
+    <div class="header item">
+        <i class="globe icon"></i>
+        设置
+    </div>
+    <a class="item">
+        奖励
+    </a>
+    <a class="item"  href="http://www.baidu.com">
+        <i class="globe icon"></i>
+        商店
+    </a>
 </div>
