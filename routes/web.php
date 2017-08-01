@@ -24,7 +24,7 @@ Route::group(['middleware' => ['auth.admin']],function(){
 //Route::match(['get','post'],'admin/login', 'Admin\AuthController@login');
 Route::match(['get','post'],'admin/logout','Admin\AuthController@logout');
 Route::match(['get','post'],'admin/register', 'Admin\AuthController@register');
-
+Route::match(['get','post'],'semantic/index','SemanticController@index');
 //Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin'], function() {
 //    Route::get('/', 'HomeController@index');
 //    Route::resource('article', 'ArticleController');

@@ -13,12 +13,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <link href="{{ asset('static/SemanticUI/semantic.min.css') }}" rel="stylesheet" type="text/css">
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+
     <style>
         #left_menu .header.item{
             background: rgba(0,0,0,.05)
@@ -31,22 +26,52 @@
     </style>
 </head>
 <body >
-@include('admin.top_menu')
 
-<div class="ui grid">
-    <div class="two wide column" >
-        @include('admin.left_menu')
-    </div>
-    <div class="fourteen wide column" >
+{{--<div class="ui bottom attached segment pushable">--}}
+@include('admin.left_menu')
+<div class="pusher">
+    <div class="ui basic segment">
+        <h3 class="ui header">应用程序内容</h3>
         @yield('content')
+        @yield('content')
+        @yield('content')
+        @yield('content')
+        @yield('content')
+        @yield('content')
+
     </div>
 </div>
+{{--</div>--}}
+{{--<div >--}}
 
+{{--</div>--}}
+{{--<div class="pusher">--}}
+    {{--<div class="ui basic segment">--}}
+        {{--<h3 class="ui header">应用程序内容</h3>--}}
+        {{--@yield('content')--}}
+    {{--</div>--}}
+{{--</div>--}}
+{{--<div class="ui grid">--}}
+    {{--<div class="two wide column" >--}}
+
+    {{--</div>--}}
+    {{--<div class="fourteen wide column" >--}}
+
+    {{--</div>--}}
+{{--</div>--}}
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"
         integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
 <script src="{{ asset('static/SemanticUI/semantic.min.js') }}"></script>
+<script src="{{ asset('js/admin/index.js') }}"></script>
 {{--引入jQuery--}}
 {{--<script src="{{ asset('static/jquery/jquery.min.js') }}"></script>--}}
 {{--引入bootstrap js库--}}

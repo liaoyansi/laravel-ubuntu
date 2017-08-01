@@ -1,0 +1,5 @@
+.left_menu{width:100%;}
+.list-group{padding-left: 0;margin-bottom: 0;}
+/*.btn-group-vertical>.btn:first-child:not(:last-child) {border-radius: 0;}*/
+.list-group-item:last-child{border-radius: 0;}
+.list-group>.list-group-item:first-child {border-radius: 0;}
