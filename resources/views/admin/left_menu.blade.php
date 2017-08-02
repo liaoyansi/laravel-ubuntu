@@ -21,4 +21,9 @@
         <a class="item" href="{{ url('admin/logout') }}">
             <i class="sign out icon" ></i> 退出
         </a>
+        @foreach($left_menu as $menu)
+        <a class="item  @if( url()->current() == url('admin/settings') )  active  @endif " href="{{ url('admin/settings') }}">
+            <i class="settings icon"></i> {{ $menu->name }}
+        </a>
+        @endforeach
 </div>

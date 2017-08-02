@@ -21,7 +21,7 @@
     @show
 </head>
 <body >
-    @include('admin.left_menu')
+    @include('admin.left_menu',['left_menu'=> \App\module\system\Config::all()])
     <div class="" id="main" >
         {{--<div class="ui segments">--}}
             <div class="ui segment">
