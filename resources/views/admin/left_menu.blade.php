@@ -1,56 +1,24 @@
-
-
-<div class="ui left thin  visible sidebar   vertical menu " id="left_menu">
-    <a class="active  item">
-        <i class="home icon"></i>主页
-    </a>
-
-    <a class="item">
-        <i class="home icon"></i>{{ \App\module\admin\AdminUser::find(1)->username }}
-    </a>
-
-    <a class="teal  item">
-        主题
-    </a>
-    <div class="header item">
-        <i class="user icon"></i>
-        订单
-    </div>
-    <a class="item">
-        朋友
-    </a>
-    <div class="header item">
-        <i class="user icon"></i>
-        用户
-    </div>
-    <a class="item">
-        历史
-    </a>
-    <a class="item">
-        消息
-    </a>
-    <a class="item">
-        讨论
-    </a>
-    <a class="item">
-        奖励
-    </a>
-    <a class="item">
-        商店
-    </a>
-    <div class="header item">
-        <i class="setting icon"></i>
-        设置
-    </div>
-    <a class="item">
-        奖励
-    </a>
-    <a class="item"  href="http://www.baidu.com">
-        <i class="globe icon"></i>
-        商店
-    </a>
-    <a class="item" href="http://www.baidu.com">
-        <i class="icon sign out"></i>退出
-    </a>
-
+<div class="ui black inverted visible sidebar left_menu">
+        <div class="header">
+            <img class="ui avatar image" src="{{ asset('images/logo.png') }}">
+            <span>{{ Auth::guard('admin')->user()->username }}</span>
+        </div>
+        <a class="item @if( url()->current() == url('admin') )  active  @endif " href="{{ url('admin') }}">
+            <i class="home icon"></i> 主页
+        </a>
+        <a class="item  @if( url()->current() == url('admin/products') )  active  @endif " href="{{ url('admin/products') }}">
+            <i class="content icon"></i> 商品
+        </a>
+        <a class="item  @if( url()->current() == url('admin/orders') )  active  @endif " href="{{ url('admin/orders') }}">
+            <i class="book icon"></i> 订单
+        </a>
+        <a class="item  @if( url()->current() == url('admin/users') )  active  @endif " href="{{ url('admin/users') }}">
+            <i class="user icon"></i> 用户
+        </a>
+        <a class="item  @if( url()->current() == url('admin/settings') )  active  @endif " href="{{ url('admin/settings') }}">
+            <i class="settings icon"></i> 设置
+        </a>
+        <a class="item" href="{{ url('admin/logout') }}">
+            <i class="sign out icon" ></i> 退出
+        </a>
 </div>

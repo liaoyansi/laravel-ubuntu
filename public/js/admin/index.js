@@ -5,5 +5,12 @@
 // ;
 
 // $(document).ready(function(){
-    $('.ui.accordion').accordion({duration:'click'});
+//     $('.ui.accordion').accordion({duration:'click'});
 // });
+
+
+
+
+$('#menu').click(function(){
+    $('.ui.sidebar').sidebar('toggle');
+});

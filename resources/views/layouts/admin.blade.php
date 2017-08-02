@@ -14,51 +14,50 @@
 
     <link href="{{ asset('static/SemanticUI/semantic.min.css') }}" rel="stylesheet" type="text/css">
 
-    <style>
-        #left_menu .header.item{
-            background: rgba(0,0,0,.05)
-        }
-        #left_menu .active.item{
-            background: #00b5ad;
-            border-color: #fff;
-            color: #fff;
-        }
-    </style>
+    <link href="{{ asset('css/admin/common/left_menu.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/admin/common/main.css') }}" rel="stylesheet" type="text/css" />
+
+    @section('style')
+    @show
 </head>
 <body >
-
-{{--<div class="ui bottom attached segment pushable">--}}
-@include('admin.left_menu')
-<div class="pusher">
-    <div class="ui basic segment">
-        <h3 class="ui header">应用程序内容</h3>
-        @yield('content')
-        @yield('content')
-        @yield('content')
-        @yield('content')
-        @yield('content')
-        @yield('content')
-
+    @include('admin.left_menu')
+    <div class="" id="main" >
+        {{--<div class="ui segments">--}}
+            <div class="ui segment">
+                <div class="ui breadcrumb">
+                    <a class="section" href="/admin">
+                        <i class="home icon "></i>主页
+                    </a>
+                    <i class="right chevron icon divider"></i>
+                    @section('breadcrumb')
+                    @show
+                </div>
+            </div>
+            <div class="ui orange segment">橘黄</div>
+            <div class="ui yellow segment">纯黄</div>
+            <div class="ui olive segment">橄榄绿</div>
+            <div class="ui green segment">纯绿</div>
+            <div class="ui teal segment">水鸭蓝</div>
+            <div class="ui blue segment">纯蓝</div>
+            <div class="ui violet segment">紫罗兰</div>
+            <div class="ui purple segment">纯紫</div>
+            <div class="ui pink segment">粉色</div>
+            <div class="ui brown segment">棕色</div>
+            <div class="ui grey segment">灰色</div>
+            <div class="ui black segment">黑色</div>
+            <div class="ui blue segment">纯蓝</div>
+            <div class="ui violet segment">紫罗兰</div>
+            <div class="ui purple segment">纯紫</div>
+            <div class="ui pink segment">粉色</div>
+            <div class="ui brown segment">棕色</div>
+            <div class="ui grey segment">灰色</div>
+            <div class="ui black segment">黑色</div>
+        {{--</div>--}}
+        <div class="ui container" id="content">
+            <div class="ui black segment">黑色</div>
+        </div>
     </div>
-</div>
-{{--</div>--}}
-{{--<div >--}}
-
-{{--</div>--}}
-{{--<div class="pusher">--}}
-    {{--<div class="ui basic segment">--}}
-        {{--<h3 class="ui header">应用程序内容</h3>--}}
-        {{--@yield('content')--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--<div class="ui grid">--}}
-    {{--<div class="two wide column" >--}}
-
-    {{--</div>--}}
-    {{--<div class="fourteen wide column" >--}}
-
-    {{--</div>--}}
-{{--</div>--}}
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -58,8 +58,11 @@ class AuthController  extends Controller
                 return Redirect()->back()->with('error', '账号或密码错误')->withInput();
             }
         }
-
-        return view('admin.login');
+        if(Auth::guard('admin')->check()){
+            return Redirect('admin');
+        }else{
+            return view('admin.login');
+        }
     }
 
     //登录页面验证

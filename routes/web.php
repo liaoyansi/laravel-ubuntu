@@ -20,6 +20,10 @@ Route::match(['get','post'],'admin/login', 'Admin\AuthController@login');
 
 Route::group(['middleware' => ['auth.admin']],function(){
     Route::get('/admin', 'Admin\WelcomeController@index');
+    Route::get('/admin/products', 'Admin\ProductController@index');
+    Route::get('/admin/orders', 'Admin\OrderController@index');
+    Route::get('/admin/users', 'Admin\UserController@index');
+    Route::get('/admin/settings', 'Admin\SettingController@index');
 });
 //Route::match(['get','post'],'admin/login', 'Admin\AuthController@login');
 Route::match(['get','post'],'admin/logout','Admin\AuthController@logout');

@@ -1,0 +1,10 @@
+body html{
+    height:100%;
+}
+
+#main{
+    padding:10px;
+    width:85%;
+    height:100%;
+    margin-left:15%;
+}
